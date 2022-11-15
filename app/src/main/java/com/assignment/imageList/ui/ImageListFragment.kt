@@ -9,11 +9,13 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.assignment.R
 import com.assignment.databinding.FragmentImageListBinding
 import com.assignment.imageList.ImageListViewModel
 import com.assignment.imageList.adapter.ImageAdapter
 import kotlinx.android.synthetic.main.fragment_image_list.*
 import com.assignment.imageList.model.Result
+import com.assignment.localDataBase.Constants
 
 class ImageListFragment : Fragment(), ImageAdapter.OnImageClickListener {
 
@@ -53,9 +55,16 @@ class ImageListFragment : Fragment(), ImageAdapter.OnImageClickListener {
     override fun onImageClicked(imageModelItem: Result) {
 
         activity?.let {
-//            val bundle = Bundle()
-//            bundle.putString(Constants.IMAGE_ID, imageModelItem.thumbnailUrl)
-//            findNavController().navigate(R.id.action_showFragment, bundle)
+
+            val bundle = Bundle()
+
+            bundle.putString(Constants.IMAGE_ID, imageModelItem.media[0].media_metadata[0].url)
+            bundle.putString(Constants.TITLE, imageModelItem.title)
+            bundle.putString(Constants.DESC, imageModelItem.abstract)
+            bundle.putString(Constants.CREATED, imageModelItem.published_date)
+
+            findNavController().navigate(R.id.detailsFragment, bundle)
+
         }
 
     }

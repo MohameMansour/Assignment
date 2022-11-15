@@ -10,11 +10,7 @@
         android:id="@+id/imageListFragment"
         android:name="com.assignment.imageList.ui.ImageListFragment"
         android:label="fragment_popular_person"
-        tools:layout="@layout/fragment_image_list" >
-        <action
-            android:id="@+id/action_showFragment"
-            app:destination="@id/showImageFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_image_list" />
 
     <fragment
         android:id="@+id/showImageFragment"
@@ -26,6 +22,10 @@
         android:id="@+id/detailsFragment"
         android:name="com.assignment.details.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_details">
+        <action
+            android:id="@+id/action_showFragment"
+            app:destination="@id/showImageFragment" />
+    </fragment>
 
 </navigation>

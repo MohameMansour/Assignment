@@ -26,16 +26,9 @@ class  ShowImageFragment : Fragment() {
 
         binding = FragmentShowImageBinding.inflate(inflater, container, false)
 
-        val url = GlideUrl(
-            image, LazyHeaders.Builder()
-                .addHeader("User-Agent", "your-user-agent")
-                .build()
-        )
-
         Glide
             .with(binding.root.context)
-            .load(url)
-            .placeholder(R.drawable.image_placeholder)
+            .load(image)
             .into(binding.fullImage)
 
         binding.fullImage

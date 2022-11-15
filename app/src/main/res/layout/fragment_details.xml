@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".details.DetailsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/profile_doctor_image"
+            android:layout_width="0dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="@id/end_guid_line"
+            app:layout_constraintStart_toStartOf="@id/start_guid_line"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/name_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:lines="2"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/end_guid_line"
+            app:layout_constraintStart_toStartOf="@+id/start_guid_line"
+            app:layout_constraintTop_toBottomOf="@id/profile_doctor_image"
+            tools:text="Mohamed Mansour" />
+
+        <TextView
+            android:id="@+id/job_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@id/end_guid_line"
+            app:layout_constraintStart_toStartOf="@id/start_guid_line"
+            app:layout_constraintTop_toBottomOf="@id/name_textview"
+            tools:text="Programmer" />
+
+        <TextView
+            android:id="@+id/created_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/end_guid_line"
+            app:layout_constraintStart_toStartOf="@id/start_guid_line"
+            app:layout_constraintTop_toBottomOf="@id/job_textview"
+            tools:text="Programmer" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            android:background="@color/cardview_dark_background"
+            app:layout_constraintEnd_toEndOf="@id/end_guid_line"
+            app:layout_constraintStart_toStartOf="@id/start_guid_line"
+            app:layout_constraintTop_toBottomOf="@+id/created_textview" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_guid_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_guid_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".9" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
